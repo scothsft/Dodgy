@@ -5,13 +5,13 @@ public class Dropper : MonoBehaviour
     [SerializeField] private float timeToDrop = 3f;
     private bool hasDropped = false;
     private MeshRenderer meshRenderer;
-    private Rigidbody rigidbody;
+    private Rigidbody rigidBody;
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.enabled = false; // Hide the mesh renderer at the start
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.useGravity = false;
+        rigidBody = GetComponent<Rigidbody>();
+        rigidBody.useGravity = false;
     }
 
     void Update()
@@ -26,7 +26,7 @@ public class Dropper : MonoBehaviour
     void Drop()
     {
         meshRenderer.enabled = true;
-        rigidbody.useGravity = true;
-        rigidbody.isKinematic = false;
+        rigidBody.useGravity = true;
+        rigidBody.isKinematic = false;
     }
 }
